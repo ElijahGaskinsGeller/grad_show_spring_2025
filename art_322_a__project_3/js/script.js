@@ -364,11 +364,11 @@ function page_init(lib) {
                     location.reload();
                 }
 
-                if (currentGamepad.buttons[4].pressed) {
+                if (currentGamepad.buttons[9].pressed) {
                     window.location.href = "http://localhost:8000/ART_322C_Project_2/";
                 }
 
-                if (currentGamepad.buttons[5].pressed) {
+                if (currentGamepad.buttons[10].pressed) {
                     window.location.href = "http://localhost:8000/ART_322C_project_3/dist/";
                 }
 
