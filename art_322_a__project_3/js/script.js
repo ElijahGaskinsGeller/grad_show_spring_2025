@@ -171,7 +171,7 @@ function page_init(lib) {
 
 
     function calcScrollEnd() {
-        return scrollStart - (page.nominalBounds.height) + (canvas.clientHeight) - (2 * padding);
+        return scrollStart - (page.nominalBounds.height) + (canvas.clientHeight) - (2 * padding) - 1600;
     }
 
     let padding = 0;
@@ -357,6 +357,19 @@ function page_init(lib) {
 
                 if (stickY * stickY > .05) {
                     window.scrollBy(0, -stickY * 5);
+                }
+
+
+                if (currentGamepad.buttons[0].pressed) {
+                    location.reload();
+                }
+
+                if (currentGamepad.buttons[4].pressed) {
+                    window.location.href = "http://localhost:8000/ART_322C_Project_2/";
+                }
+
+                if (currentGamepad.buttons[5].pressed) {
+                    window.location.href = "http://localhost:8000/ART_322C_project_3/dist/";
                 }
 
             }

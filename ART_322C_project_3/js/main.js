@@ -205,6 +205,24 @@ function animate(time) {
 	let deltaTime = time - lastFrameTime;
 	lastFrameTime = time;
 
+	let gamepads = navigator.getGamepads();
+
+	for (let i = 0; i < gamepads.length; i++) {
+
+		let currentGamepad = gamepads[i];
+
+		if (currentGamepad !== null) {
+			if (currentGamepad.buttons[4].pressed) {
+				window.location.href = "http://localhost:8000/art_322_a__project_3/elijah_gaskins_geller__project_3.html";
+			}
+
+			if (currentGamepad.buttons[5].pressed) {
+				window.location.href = "http://localhost:8000/ART_322C_Project_2/";
+			}
+		}
+	}
+
+
 	if (playing) {
 
 		currentFrameTime += deltaTime;
@@ -227,7 +245,6 @@ function animate(time) {
 			let currentGamepad = gamepads[i];
 
 			if (currentGamepad !== null) {
-				console.log(currentGamepad);
 
 				let stickX = currentGamepad.axes[0];
 				let stickY = -currentGamepad.axes[1];
@@ -241,7 +258,6 @@ function animate(time) {
 				if (stickY * stickY > .05) {
 					camera.rotateOnAxis(new THREE.Vector3(1, 0, 0), normalStick.y * .01);
 				}
-
 			}
 
 		}
@@ -264,28 +280,10 @@ function animate(time) {
 			if (loadedFrames === frameCount) {
 
 				loadScene.remove(loadTextMesh);
-				frameText = new TextGeometry("Click To Play", { font: loadFont, size: 1, depth: 0 });
+				frameText = new TextGeometry(loadedFrames + "/" + frameCount, { font: loadFont, size: 1, depth: 0 });
+				camera.rotation.y = Math.PI;
+				playing = true;
 
-
-				let gamepads = navigator.getGamepads();
-
-				for (let i = 0; i < gamepads.length; i++) {
-
-					let currentGamepad = gamepads[i];
-
-					if (currentGamepad !== null) {
-
-						for (let j = 0; j < currentGamepad.buttons.length; j++) {
-
-							if (currentGamepad.buttons[j].pressed) {
-								camera.rotation.y = Math.PI;
-								playing = true;
-								music.play();
-								soundIcon.classList.add("display");
-							}
-						}
-					}
-				}
 			} else {
 				frameText = new TextGeometry(loadedFrames + "/" + frameCount, { font: loadFont, size: 1, depth: 0 });
 			}

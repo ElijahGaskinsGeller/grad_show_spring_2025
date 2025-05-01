@@ -245,6 +245,36 @@ function animate(time) {
 
 	}
 
+	let gamepads = navigator.getGamepads();
+
+	for (let i = 0; i < gamepads.length; i++) {
+
+		let currentGamepad = gamepads[i];
+
+		if (currentGamepad !== null) {
+
+			let stickY = -currentGamepad.axes[1];
+
+			if (stickY * stickY > .05) {
+				window.scrollBy(0, -stickY * 1.5);
+			}
+
+			if (currentGamepad.buttons[0].pressed) {
+				location.reload();
+			}
+
+			if (currentGamepad.buttons[4].pressed) {
+				window.location.href = "http://localhost:8000/ART_322C_project_3/dist/";
+			}
+
+			if (currentGamepad.buttons[5].pressed) {
+				window.location.href = "http://localhost:8000/art_322_a__project_3/elijah_gaskins_geller__project_3.html";
+			}
+
+		}
+	}
+
+
 	renderer.render(scene, camera);
 
 
