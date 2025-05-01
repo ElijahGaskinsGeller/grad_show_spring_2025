@@ -212,11 +212,11 @@ function animate(time) {
 		let currentGamepad = gamepads[i];
 
 		if (currentGamepad !== null) {
-			if (currentGamepad.buttons[9].pressed) {
+			if (currentGamepad.buttons[8].pressed) {
 				window.location.href = "http://localhost:8000/art_322_a__project_3/elijah_gaskins_geller__project_3.html";
 			}
 
-			if (currentGamepad.buttons[10].pressed) {
+			if (currentGamepad.buttons[9].pressed) {
 				window.location.href = "http://localhost:8000/ART_322C_Project_2/";
 			}
 		}

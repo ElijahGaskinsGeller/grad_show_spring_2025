@@ -359,24 +359,24 @@ function page_init(lib) {
                     window.scrollBy(0, -stickY * 5);
                 }
 
-                for (let j = 0; j < currentGamepad.buttons.length; j++) {
-
-                    if (currentGamepad.buttons[j].pressed) {
-                        console.log(j);
-                    }
-
-                }
+                //for (let j = 0; j < currentGamepad.buttons.length; j++) {
+                //
+                //    if (currentGamepad.buttons[j].pressed) {
+                //        console.log(j);
+                //    }
+                //
+                //}
 
 
                 if (currentGamepad.buttons[0].pressed) {
                     location.reload();
                 }
 
-                if (currentGamepad.buttons[9].pressed) {
+                if (currentGamepad.buttons[8].pressed) {
                     window.location.href = "http://localhost:8000/ART_322C_Project_2/";
                 }
 
-                if (currentGamepad.buttons[10].pressed) {
+                if (currentGamepad.buttons[9].pressed) {
                     window.location.href = "http://localhost:8000/ART_322C_project_3/dist/";
                 }
 
