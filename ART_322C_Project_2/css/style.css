@@ -1,0 +1,15 @@
+
+
+
+body {
+	margin: 0;
+        height: 300vh;
+	overflow-x: hidden;
+}
+
+
+canvas {
+        position: fixed;
+        overflow: clip;
+        overflow-clip-margin: content-box;
+}

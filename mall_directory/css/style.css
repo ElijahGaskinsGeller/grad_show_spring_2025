@@ -1,0 +1,88 @@
+body {
+        margin: 0;
+        overflow: hidden;
+}
+
+
+canvas {
+        overflow: clip;
+        overflow-clip-margin: content-box;
+}
+
+#map-container {
+
+        width: 100%;
+
+}
+
+#panel-container {
+
+        width: 0vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        background: white;
+        display: flex;
+
+}
+
+.panel {
+        margin: auto;
+        aspect-ratio: 1/1;
+        /*width: 95%;*/
+        background: white;
+
+        display: none;
+        text-align: center;
+
+
+}
+
+
+
+.display {
+
+        display: block;
+
+}
+
+
+#upper-left {
+        background: blue;
+}
+
+#upper-middle {
+        background: purple;
+}
+
+#upper-right {
+        background: violet;
+}
+
+
+#middle-left {
+        background: orange;
+}
+
+#middle-middle {
+        background: red;
+}
+
+#middle-right {
+        background: IndianRed;
+}
+
+
+#lower-left {
+        background: green;
+}
+
+#lower-middle {
+        background: cyan;
+}
+
+#lower-right {
+        background: CornflowerBlue;
+}
