@@ -359,6 +359,14 @@ function page_init(lib) {
                     window.scrollBy(0, -stickY * 5);
                 }
 
+                for (let j = 0; j < currentGamepad.buttons.length; j++) {
+
+                    if (currentGamepad.buttons[j].pressed) {
+                        console.log(j);
+                    }
+
+                }
+
 
                 if (currentGamepad.buttons[0].pressed) {
                     location.reload();
